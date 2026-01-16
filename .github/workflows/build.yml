@@ -1,7 +1,6 @@
 name: Titan-Build-v51
 
-on:
-  push:
+on: [push]
 
 jobs:
   build:
@@ -13,11 +12,18 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
           java-version: 17
+          distribution: temurin
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+
+      - name: Accept Licenses
+        run: yes | sdkmanager --licenses
+
+      - name: Install SDK
+        run: |
+          sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
       - name: Build APK
         run: |

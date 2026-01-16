@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'com.adguard.pro'
+    namespace "com.adguard.pro"
     compileSdk 34
 
     defaultConfig {
@@ -11,12 +11,6 @@ android {
         minSdk 24
         targetSdk 34
         versionCode 51
-        versionName "5.1-TITAN"
-    }
-
-    buildTypes {
-        debug {
-            debuggable true
-        }
+        versionName "5.1"
     }
 }

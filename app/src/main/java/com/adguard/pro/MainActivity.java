@@ -4,27 +4,37 @@ import android.os.Bundle;
 import android.widget.*;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 
 public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LinearLayout l = new LinearLayout(this);
-        l.setOrientation(LinearLayout.VERTICAL);
-        l.setBackgroundColor(Color.BLACK);
-        l.setGravity(Gravity.CENTER);
+        LinearLayout main = new LinearLayout(this);
+        main.setOrientation(LinearLayout.VERTICAL);
+        main.setBackgroundColor(Color.parseColor("#080808"));
+        main.setGravity(Gravity.CENTER);
 
-        TextView t = new TextView(this);
-        t.setText("ADGUARD ROCKET MAX v50");
-        t.setTextColor(Color.GREEN);
-        t.setTextSize(25);
-        l.addView(t);
+        TextView head = new TextView(this);
+        head.setText("ADGUARD ROCKET v51\nTITAN EDITION");
+        head.setTextColor(Color.parseColor("#00FFCC"));
+        head.setTextSize(28);
+        head.setGravity(Gravity.CENTER);
+        head.setPadding(0, 0, 0, 100);
+        main.addView(head);
 
-        Button b1 = new Button(this);
-        b1.setText("DNS 1: ROCKET SPEED");
-        b1.setOnClickListener(v -> Toast.makeText(this, "DNS Active", 0).show());
-        l.addView(b1);
+        // DNS Button
+        Button dns = new Button(this);
+        dns.setText("DNS 1: ROCKET SPEED");
+        dns.setOnClickListener(v -> Toast.makeText(this, "AdGuard DNS: Connected", 0).show());
+        main.addView(dns);
 
-        setContentView(l);
+        // VPN Button
+        Button vpn = new Button(this);
+        vpn.setText("VPN: NORMAL SPEED");
+        vpn.setOnClickListener(v -> Toast.makeText(this, "Local VPN: Active", 0).show());
+        main.addView(vpn);
+
+        setContentView(main);
     }
 }

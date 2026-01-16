@@ -1,20 +1,20 @@
-name: Rocket-v50-Final
+name: Titan-Build-v51
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: set up JDK 17
+      - name: Setup Java
         uses: actions/setup-java@v4
         with: {java-version: '17', distribution: 'temurin'}
-      - name: Build with Gradle
+      - name: Generate Wrapper & Build
         run: |
           gradle wrapper --gradle-version 8.2
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
-      - name: Upload APK
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: AdGuard-Rocket-v50
+          name: AdGuard-Titan-v51
           path: app/build/outputs/apk/debug/app-debug.apk

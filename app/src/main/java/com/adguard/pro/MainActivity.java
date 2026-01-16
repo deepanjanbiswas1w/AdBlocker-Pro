@@ -8,15 +8,16 @@ import android.widget.LinearLayout;
 import java.util.HashSet;
 
 public class MainActivity extends Activity {
-    // দ্রুততম ডোমেইন চেকিংয়ের জন্য Hash-Table ব্যবহার
+    // দ্রুততম ডোমেইন ফিল্টারিংয়ের জন্য Hash Table
     private HashSet<String> dnsCache = new HashSet<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // AdGuard DNS Active IPs: 94.140.14.14
+        // AdGuard DNS Integration
         dnsCache.add("dns.adguard.com");
+        dnsCache.add("94.140.14.14");
         
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -24,7 +25,7 @@ public class MainActivity extends Activity {
         layout.setGravity(Gravity.CENTER);
 
         TextView tv = new TextView(this);
-        tv.setText("ADGUARD PRO\nROCKET ENGINE ACTIVE");
+        tv.setText("ADGUARD ROCKET PRO\nSTATUS: PROTECTED");
         tv.setTextColor(Color.parseColor("#00FFCC"));
         tv.setTextSize(24);
         tv.setGravity(Gravity.CENTER);

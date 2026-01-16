@@ -1,12 +1,22 @@
-plugins { id 'com.android.application' }
+plugins {
+    id 'com.android.application'
+}
+
 android {
     namespace 'com.adguard.pro'
     compileSdk 34
+
     defaultConfig {
         applicationId "com.adguard.pro"
         minSdk 24
         targetSdk 34
         versionCode 51
         versionName "5.1-TITAN"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
     }
 }

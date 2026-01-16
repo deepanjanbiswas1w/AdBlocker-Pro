@@ -6,7 +6,7 @@ android {
         applicationId "com.adguard.pro"
         minSdk 24
         targetSdk 34
-        versionCode 46
-        versionName "4.6"
+        versionCode 47
+        versionName "4.7"
     }
 }

@@ -1,0 +1,15 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+android {
+    namespace 'com.example.adblock'
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.example.adblock"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+}
